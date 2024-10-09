@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.backface{
+    backface-visibility: hidden;
+}
+
+@layer base{
+    body{
+        @apply font-grandstander
+    }
+}
+
+@layer components{
+    .btn{
+        @apply rounded-md transition duration-200
+        
+    }
+    .quizbtn{
+        @apply font-medium text-xl rounded-md transition duration-150 bg-blue-700 capitalize hover:scale-105 hover:border-slate-300 hover:border
+    }
+    .link{
+        @apply text-slate-100 font-medium text-xl rounded-md transition duration-200 bg-blue-700 capitalize hover:scale-105 hover:text-slate-100 p-3 hover:border-slate-300 hover:border
+    }
+}
+

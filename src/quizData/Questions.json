@@ -1,0 +1,34 @@
+[
+    {
+        "question":"What is 1+1?",
+        "answer":"2"
+    },
+    {
+        "question":"What is 2*3?",
+        "answer":"6"
+    },
+    {
+        "question":"What is 2+1+2?",
+        "answer":"5"
+    },
+    {
+        "question":"What is a mountain?",
+        "answer":"Big pile of dirt"
+    },
+    {
+        "question":"What is a Snake?",
+        "answer":"Long stick"
+    },
+    {
+        "question":"What is my name?",
+        "answer":"Dick"
+    },
+    {
+        "question":"Why did the Grinch stole christmas?",
+        "answer":"He did not"
+    },
+    {
+        "question":"What is the biggest object on the planet?",
+        "answer":"Yo mamma gyatt"
+    }
+]

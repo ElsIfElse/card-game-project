@@ -67,23 +67,28 @@ const GamePage = () => {
     }
 
    const endGameAnim = useSpring({
-        transform: gameOver ? "translateY(-900px) scale(0.1)" : "translateY(0px) scale(1)",
-        config:{mass:2,friction:20}
+        transform: gameOver ? "translateY(-900px) scale(0)" : "translateY(0px) scale(1)",
+        config:{mass:3,friction:50,tension:600}
     })
     const gameAnim = useSpring({
-        transform: gameOver ?   "translateY(-500px) scale(1)" : "translateY(900px) scale(5)",
-        config:{mass:1}
+        transform: gameOver ?  "translateY(-500px) scale(1)" : "translateY(1000px) scale(0)",
+        config:{mass:3,friction:50,tension:700}
     })
+
 
     const printGame = function(){
         return(
             <animated.div style={endGameAnim} className="flex flex-col items-center h-[700px] w-full">
                 <Card pos="0" number={newNumber}/>
-            <div className="flex flex-col items-center justify-between h-[220px] mt-[50px]">
-                <button className="text-slate-100 text-2xl p-3 rounded-3xl bg-blue-300 hover:scale-110 hover:text-slate-800" onClick={getRandomNum}>Random Num</button>
-                <button className="text-slate-100 text-2xl p-3 rounded-3xl bg-blue-300 hover:scale-110 hover:text-slate-800" onClick={handleStop}>Stop</button>
-                <h1 className="text-4xl">Sum:{playerSum}</h1>
-                <Link className="text-slate-100 text-xl p-3 rounded-3xl bg-blue-300 hover:scale-110 hover:text-slate-800" to={'/'}>Main Page</Link>
+            <div className="flex flex-col items-center justify-between h-[220px] mt-[20px] w-[400px]">
+                <h1 className="text-4xl ">Sum:{playerSum}</h1>
+
+                <div className="flex flex-row justify-around w-full mt-5">
+                    <button className="quizbtn" onClick={getRandomNum}>Draw</button>
+                    <button className="quizbtn" onClick={handleStop}>Stop</button>
+                </div>
+
+                <Link className="link mt-10" to={'/'}>Back To Main Page</Link>
             </div>
             </animated.div>
         )
@@ -99,8 +104,8 @@ const GamePage = () => {
                     <p className="text-3xl">Enemy Num: {enemyNum}</p>
                 </div>
                 {win ? <p className="text-3xl">Win Streak: {winStreak}</p> : <p className="text-3xl">Loss Streak: {lossStreak}</p>}
-                <button className="text-slate-100 text-3xl p-3 rounded-3xl bg-blue-300 hover:scale-110 hover:text-slate-800" onClick={handleNewGame}>New Game</button>
-                <Link className="text-slate-100  text-xl p-3 bg-blue-300 rounded-3xl hover:scale-110 hover:text-slate-800" to={'/'}>Main Page</Link>
+                <button className="text-slate-100 text-3xl p-3 bg-blue-300 hover:scale-110 hover:text-slate-800 btn" onClick={handleNewGame}>New Game</button>
+                <Link className="text-slate-100 text-xl p-3 bg-blue-300 hover:scale-110 hover:text-slate-800 link" to={'/'}>Main Page</Link>
             </animated.div>
         )
     }

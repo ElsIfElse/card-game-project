@@ -4,8 +4,7 @@ import { animated,useSpring } from "@react-spring/web";
 
 interface CardProps{
     number: number | null,
-    pos:string
-
+    pos:string,
 }
 
 
@@ -19,7 +18,7 @@ const Card:React.FC<CardProps> = ({number,pos}) => {
     })
 
     return ( 
-        <animated.div style={cardAnim} className="h-[400px] w-[250px] bg-slate-200 rounded-lg flex flex-col items-center justify-center">
+        <animated.div style={cardAnim} className="h-[600px] w-[375px] bg-slate-200 rounded-lg flex flex-col items-center justify-center">
             <h2 className="text-black text-5xl">{number}</h2>
         </animated.div>
      );
